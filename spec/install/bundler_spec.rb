@@ -101,6 +101,8 @@ RSpec.describe "bundle install" do
             activemerchant was resolved to 1.0, which depends on
               activesupport (>= 2.0.0)
 
+              activesupport is particularly not satisfied because activesupport (>= 2.0.0) is not satisfied by 1.2.3
+
             rails_fail was resolved to 1.0, which depends on
               activesupport (= 1.2.3)
       E

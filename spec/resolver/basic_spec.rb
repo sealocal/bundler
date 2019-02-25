@@ -126,6 +126,8 @@ Bundler could not find compatible versions for gem "a":
 
     c was resolved to 1.0, which depends on
       a (< 1)
+
+      a is particularly not satisfied because a (< 1) is not satisfied by 2.0
     E
   end
 

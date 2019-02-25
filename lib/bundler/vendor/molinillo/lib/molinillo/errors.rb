@@ -122,11 +122,20 @@ module Bundler::Molinillo
           depth = 2
           tree.each do |req|
             t << '  ' * depth << req.to_s
-            unless tree.last == req
-              if spec = conflict.activated_by_name[name_for(req)]
+            spec = conflict.activated_by_name[name_for(req)]
+            if tree.last != req
+              if spec
                 t << %( was resolved to #{version_for_spec.call(spec)}, which)
               end
               t << %( depends on)
+            else
+              if spec
+                version = version_for_spec.call(spec)
+                if !req.requirement.satisfied_by?(version)
+                  t << %(\n\n#{'  ' * depth}) <<
+                    %(#{req.name} is particularly not satisfied because #{req} is not satisfied by #{version})
+                end
+              end
             end
             t << %(\n)
             depth += 1
