@@ -201,7 +201,7 @@ RSpec.describe "bundle flex_install" do
             rack-obama (= 2.0) was resolved to 2.0, which depends on
               rack (= 1.2)
 
-              rack is particularly not satisfied because rack (= 1.2) is not satisfied by 0.9.1
+              In particular, rack (= 1.2) is not satisfied by 0.9.1
 
             rack_middleware was resolved to 1.0, which depends on
               rack (= 0.9.1)
